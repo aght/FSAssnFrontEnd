@@ -22,7 +22,7 @@ td {
     overflow-y: initial !important
 }
 .modal-body{
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - 80px);
     overflow-y: auto;
 }
 
@@ -74,7 +74,7 @@ hr {
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: #000;
+    background: rgb(80, 80, 80);
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
   .lds-ellipsis div:nth-child(1) {

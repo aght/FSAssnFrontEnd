@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   editBoat: BoatModel;
 
   isLoading: boolean = true;
+  isEditing: boolean = false;
 
   constructor(
     private restService: RestService,
@@ -76,7 +77,9 @@ export class HomeComponent implements OnInit {
       .subscribe((r: any) => {
         this.boats.push(r);
         this.addBoat = new BoatModel();
+        this.isLoading = false;
       });
+    this.isLoading = true;
   }
 
   saveBoat() {
@@ -84,8 +87,9 @@ export class HomeComponent implements OnInit {
       .pipe(first())
       .subscribe((r: any) => {
         this.boats[this.boats.indexOf(this.boats.find(b => b.boatId === this.editBoat.boatId))] = this.editBoat;
-        console.log(r);
-      })
+        this.isEditing = false;
+      });
+      this.isEditing = true;
   }
 
   cancelAdd() {
