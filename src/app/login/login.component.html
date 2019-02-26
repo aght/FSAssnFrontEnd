@@ -12,13 +12,11 @@
       <label for="username">Username</label>
       <input type="text" class="form-control" id="username" required [(ngModel)]="username" name="username">
     </div>
-    <p>{{username}}</p>
 
     <div class="form-group">
       <label for="password">Password</label>
       <input type="password" class="form-control" id="password" required [(ngModel)]="password" name="password">
     </div>
-    <p>{{password}}</p>
     <button [disabled]="isLoading" type="submit" class="btn btn-success">Login</button>
     <br>
     <a [routerLink]="['/register']">Register here</a>
