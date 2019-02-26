@@ -72,6 +72,7 @@ export class HomeComponent implements OnInit {
 
   addNewBoat() {
     delete this.addBoat.boatId;
+    this.isLoading = true;
     this.restService.addBoat(this.addBoat)
       .pipe(first())
       .subscribe((r: any) => {
@@ -79,17 +80,16 @@ export class HomeComponent implements OnInit {
         this.addBoat = new BoatModel();
         this.isLoading = false;
       });
-    this.isLoading = true;
   }
 
   saveBoat() {
+    this.isEditing = true;
     this.restService.updateBoat(this.editBoat.boatId, this.editBoat)
       .pipe(first())
       .subscribe((r: any) => {
         this.boats[this.boats.indexOf(this.boats.find(b => b.boatId === this.editBoat.boatId))] = this.editBoat;
         this.isEditing = false;
       });
-      this.isEditing = true;
   }
 
   cancelAdd() {
@@ -113,9 +113,7 @@ export class HomeComponent implements OnInit {
     this.toBase64(image)
       .then(
         (data: string) => {
-          console.log(boat.picture);
           boat.picture = data;
-          console.log(boat.picture)
         }
       );
   }
