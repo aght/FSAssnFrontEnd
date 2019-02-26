@@ -28,10 +28,10 @@
         </td>
         <td>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewModal"
-            (click)="setViewBoat(b)">View</button>
+            (click)="setViewBoat(b)" [disabled]="isEditing">View</button>
         </td>
         <td *ngIf="isAdmin">
-          <button type="button" class="btn btn-danger" (click)="deleteBoat(b.boatId)">Delete</button>
+          <button type="button" class="btn btn-danger" (click)="deleteBoat(b.boatId)" [disabled]="isEditing">Delete</button>
         </td>
       </tr>
     </tbody>
