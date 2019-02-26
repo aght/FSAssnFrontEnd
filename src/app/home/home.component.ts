@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
   ) {
     this.addBoat = new BoatModel();
     this.editBoat = new BoatModel();
+    this.viewBoat = new BoatModel();
   }
 
   ngOnInit() {
