@@ -263,7 +263,7 @@ __pycache__/
 *.pyc
 
 # compiled output
-/dist
+#/dist
 /tmp
 /out-tsc
 

@@ -14,7 +14,7 @@ import { first } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  isAdmin:boolean = localStorage.getItem('role').toLowerCase() === "admin";
+  isAdmin: boolean = localStorage.getItem('role').toLowerCase() === "admin";
 
   froalaOptions: Object = {
     height: 500,
