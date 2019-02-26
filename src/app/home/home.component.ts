@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
   addBoat: BoatModel;
   editBoat: BoatModel;
 
+  isLoading: boolean = true;
+
   constructor(
     private restService: RestService,
     private authService: AuthenticationService,
@@ -45,6 +47,7 @@ export class HomeComponent implements OnInit {
   getBoats() {
     this.restService.getBoats().subscribe((data: []) => {
       this.boats = data;
+      this.isLoading = false;
     });
   }
 

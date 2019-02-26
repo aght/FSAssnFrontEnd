@@ -36,6 +36,10 @@
       </tr>
     </tbody>
   </table>
+  <div class="loading-indicator" *ngIf="isLoading">
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+  </div>
+
 
   <div class="modal fade" id="viewModal">
     <div class="modal-dialog modal-full">
